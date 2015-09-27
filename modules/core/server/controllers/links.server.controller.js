@@ -5,9 +5,13 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
-  Site = mongoose.model('Site'),
-  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
+  fs=require('fs'),
 
+
+  Circular = mongoose.model('Circular'),
+    Site = mongoose.model('Site'),
+  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
+var uuid = require('node-uuid');
 /**
  * Create a site
  */
@@ -125,4 +129,50 @@ exports.siteByID = function (req, res, next, id) {
     req.article = article;
     next();
   });
+};
+
+/**
+ * Update profile picture
+ */
+exports.uploadFile = function (req, res) {
+  //var user = req.user;
+
+  var message = null;
+//var Circular = new Circular(req.body);
+  //Circular.user = req.user;
+  //if (user) {
+
+    //console.log(req.body);
+    var data= req.body.files;
+    var fileName =  uuid.v1()+".pdf";
+
+    var pdf = data.replace('data:application/pdf;base64,', '');
+    console.log(fileName);
+    fs.writeFile('./modules/users/client/img/profile/uploads/'+fileName, pdf, 'base64', function(uploadError){
+      if (uploadError) {
+        return res.status(400).send({
+          message: 'Error occurred while uploading profile picture'
+        });
+      } else {
+        var circular=new Circular();
+        circular.circular_title=req.body.title;
+        circular.created=new Date();
+        circular.user=req.body.user;
+        circular.content= req.body.content;
+        circular.link = '/modules/users/client/img/profile/uploads/' + fileName;
+
+        circular.save(function (saveError) {
+          if (saveError) {
+            return res.status(400).send({
+              message: errorHandler.getErrorMessage(saveError)
+            });
+          } else {
+            
+                res.json(circular);
+              }
+            });
+        //});
+      }
+    });
+ 
 };

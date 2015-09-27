@@ -1,0 +1,40 @@
+<section class="row" ng-controller="UploadController">
+   <div ng-hide="success"  class="page-header">
+   <a ui-sref="list-circ">Show All</a>
+    <h1>New circular</h1>
+  </div>
+  <div ng-hide="success" class="col-md-12"> 
+   <form name="siteForm" class="form-horizontal" ng-submit="uploadFiles(siteForm.$valid)" novalidate>
+   
+      <fieldset>
+       <div class="form-group" show-errors>
+          <label for="title">Circular Title</label>
+          <input name="title" type="text" ng-model="circular_title" id="title" class="form-control" placeholder="Title" required>
+          <div ng-messages="siteForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Site title is required.</p>
+          </div>
+        </div>
+         <div class="form-group">
+          <label for="content">Content</label>
+          <textarea name="content" ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+       
+            <input type="file"  accept=".pdf" file-read="fileContent"/><br>
+        <button class="btn btn-primary" type="submit" >Upload</button>
+       
+        </div>
+         </form>
+        
+      </fieldset>
+    </form>
+  </div>
+  <div ng-show="success" class="text-center text-success">
+          <strong>Updated Successfully</strong>
+          <a ui-sref="list-circ">Show All</a>
+        </div>
+        <div ng-show="error" class="text-center text-danger">
+          <strong ng-bind="error"></strong>
+        </div> 
+
+
+</section>

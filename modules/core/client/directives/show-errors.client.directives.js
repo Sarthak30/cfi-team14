@@ -72,3 +72,23 @@ angular.module('core')
       }
     };
 }]);
+angular.module("core").directive("fileRead", [function () {
+    return {
+        scope: {
+            fileRead: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+              var reader = new FileReader();
+                reader.onload = function (loadEvent) {
+                scope.$apply(function () {
+                    scope.fileRead = loadEvent.target.result;
+                    // or all selected files:
+                    // scope.fileread = changeEvent.target.files;
+                });
+                }
+                reader.readAsDataURL(changeEvent.target.files[0]);
+            });
+        }
+    }
+}]);

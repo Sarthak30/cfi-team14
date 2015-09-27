@@ -5,17 +5,25 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
   function ($stateProvider, $urlRouterProvider) {
 
     // Redirect to 404 when route not found
-    $urlRouterProvider.otherwise(function ($injector, $location) {
+   /* $urlRouterProvider.otherwise(function ($injector, $location) {
       $injector.get('$state').transitionTo('not-found', null, {
         location: false
       });
-    });
+    });*/
 
     // Home state routing
     $stateProvider
     .state('home', {
       url: '/',
       templateUrl: 'modules/core/client/views/home.client.view.html'
+    })
+    .state('upload', {
+      url: '/upload',
+      templateUrl: 'modules/core/client/views/upload.client.view.html'
+    })
+     .state('list-circ', {
+      url: '/list-circ',
+      templateUrl: 'modules/core/client/views/listcircular.client.view.html'
     })
     .state('not-found', {
       url: '/not-found',
