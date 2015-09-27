@@ -51,7 +51,7 @@
                         <label for="agencySearch"><h3>Type a Government Agency Name </h3></label>
                         <div class="row search-input-container">
                           <div class="col-md-9 search-input-txt-container">
-                            <input type="text" ng-model="siteName" placeholder="site name"  typeahead="item as item.title for item in recommend($viewValue) | filter:{title:$viewValue}" class="typeahead1 input-md  form-control tt-input" required="">
+                            <input type="text" ng-model="siteName" placeholder="site name"  typeahead="item as item.title for item in recommend($viewValue) | filter:{title:$viewValue}" class="typeahead input-md  form-control tt-input" required="">
                         </div><div class="col-md-3">
                               <input type="submit" ng-click="searchSites(siteName)" class="btn-warning btn" value="Find" style=""></div>
                             

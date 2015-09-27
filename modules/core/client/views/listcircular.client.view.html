@@ -1,8 +1,10 @@
  <section class="row" ng-controller="UploadController" ng-init="getCirculars()">
   
   <div class="page-header">
-Circulars
-  </div><div class="list-group">
+<h2>Circulars</h2> <a class="btn btn-primary pull-right" ng-if="authentication.user" ui-sref="upload">Upload a new circular</a>
+  </div>
+   <div class="row">
+   <div class="list-group">
     <div ng-repeat="article in listCirculars" class="list-group-item">
       <small class="list-group-item-text">
         Posted on
@@ -13,5 +15,6 @@ Circulars
       <h4 class="list-group-item-heading" ng-bind="article.circular_title"></h4>
       <a class="list-group-item-text" ng-href="{{article.link}}">Circular  </a> (Right click to save)
     </div>
+  </div>
   </div>
   </section>

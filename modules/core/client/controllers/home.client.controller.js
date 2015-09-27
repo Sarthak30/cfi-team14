@@ -89,7 +89,7 @@ angular.module('core').controller('HomeController', ['$scope', '$http','$locatio
                                   $scope.listSites=sites.siteData;
                                 });
 
-                                /*return $http.get('getSites?search=' + parameter,  { cache: true}).then(function (cities) {
+                                return $http.get('getSites?search=' + parameter,  { cache: true}).then(function (cities) {
 
                                     if (cities.data.TotalSites == 0) {
                                         cities.data.siteData.push({'title': "No Result found",'id':0,'img':false});
@@ -109,7 +109,7 @@ angular.module('core').controller('HomeController', ['$scope', '$http','$locatio
                                         });
                                     }
                                     $scope.showSpinner =false;
-                                });*/
+                                });
                             }
                         
 

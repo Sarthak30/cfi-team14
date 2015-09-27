@@ -5,6 +5,7 @@ angular.module('core').controller('UploadController', ['$scope', '$http','$locat
    /* $scope.uploader = new FileUploader({
       url: 'api/uploads/'
     });*/
+$scope.authentication = Authentication;
 
 $scope.circular_title='';
 $scope.uploadFiles = function () {
