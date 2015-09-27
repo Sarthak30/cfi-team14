@@ -1,0 +1,48 @@
+<section ng-controller="HomeController">
+  <div class="page-header">
+    <h1>New site</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="siteForm" class="form-horizontal" ng-submit="create(siteForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="title">Title for website</label>
+          <input name="title" type="text" ng-model="site_name" id="title" class="form-control" placeholder="Title" required>
+          <div ng-messages="siteForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Site title is required.</p>
+          </div>
+        </div>
+         <div class="form-group" ng-class="{ 'has-error' : submitted && targetForm.targetType.$invalid}">
+                <label class="control-label" for="siteType">Type</label>
+                <div class="controls">
+                    <select class="form-control" ng-model="siteType" ng-selected="targetType"  required  style="width:300px;">
+                        <option value="education">Education</option>
+                        <option value="Municipality">Municipality</option>
+
+                        <option value="govt">Government Agencies</option>
+
+                        <option value="Health">Health</option>
+                    </select>
+                </div>
+                <div ng-show="submitted && targetForm.targetType.$invalid" class="help-block">
+                    <p ng-show="targetForm.type.$error.required" class="text-danger">Type is required</p>
+                </div>  
+            </div>
+        <div class="form-group">
+          <label for="content">Please Mention any special features you require....</label>
+          <textarea name="content" ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="content">Contact number </label>
+          <input type="number" name="contact" ng-model="user_contact" class="form-control" placeholder="Contact"/>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-default">
+        </div>
+        <div ng-show="error" class="text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

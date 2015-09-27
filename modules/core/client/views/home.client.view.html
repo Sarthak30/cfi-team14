@@ -1,0 +1,111 @@
+<section ng-controller="HomeController" ng-init="find()">
+  <div class="jumbotron text-center">
+    <div class="row">
+     <h1>
+        Indian Government Portal
+      </h1>
+      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+        <img alt="" class="img-responsive text-center" src="" />
+      </div>
+    </div>
+    <br>
+    <div class="row">
+     
+    </div>
+    <div class="row">
+     <main id="content">
+      <div class="col-md-12 col-md-offset-1">
+        <ul class="az-list group">
+            <li> <a class="atoz_letter"ng-click="searchSites('a')">A</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('B')">B</a></li>
+            <li><a class="atoz_letter"ng-click="searchSites('c')">C</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('d')">D</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('e')">E</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('f')">F</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('g')">G</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('h')">H</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('i')">I</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('j')">J</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('k')">K</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('l')">L</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('m')">M</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('n')">N</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('o')">O</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('p')">P</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('q')">Q</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('r')">R</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('s')">S</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('T')">T</a></li>
+            <li><a class="atoz_letter" ng-click="searchSites('u')">U</a></li>
+            <li><a class="atoz_letter"ng-click="searchSites(v)">V</a></li>
+            <li><a class="atoz_letter"ng-click="searchSites('w')">W</a></li>
+            <li><a class="atoz_letter"ng-click="searchSites('x')">X</a></li>
+            <li><a class="atoz_letter"ng-click="searchSites('y')">Y</a></li>
+            <li><a class="atoz_letter"ng-click="searchSites('z')">Z</a></li>    
+        </ul>
+
+    </div>
+    <div class="col-md-12">
+        <div class="ui-widget">
+                      <form name="search_form" id="searchForm" accept-charset="UTF-8">
+                        <label for="agencySearch"><h3>Type a Government Agency Name </h3></label>
+                        <div class="row search-input-container">
+                          <div class="col-md-9 search-input-txt-container">
+                            <input type="text" ng-model="siteName" placeholder="site name"  typeahead="item as item.title for item in recommend($viewValue) | filter:{title:$viewValue}" class="typeahead1 input-md  form-control tt-input" required="">
+                        </div><div class="col-md-3">
+                              <input type="submit" ng-click="searchSites(siteName)" class="btn-warning btn" value="Find" style=""></div>
+                            
+                          </div>
+                        </div>
+                      </form> 
+         </div>
+    </div>
+    </div>
+  </div>
+  <div ng-hide="search">
+  <table style="border-spacing: 10px;width:100%; ">
+           <tbody cellpadding="0">
+           <tr ng-repeat="list in listSites">
+              <td><a class="atoz_letter" href="{{list.link}}">{{list.site_name}}</a></td>
+              <td> {{list.siteType}}</td>
+
+
+            </tr>
+            </tbody>
+    </table>
+  </div>
+   <div ng-show="search">
+   <table style="border-spacing: 10px;width:100%; ">
+           <tbody cellpadding="0">
+           <tr ng-repeat="list in searchSites">
+              <td style="list-style-type:none;" ><a class="atoz_letter" href="{{list.link}}">{{list.site_name}}</a></td>
+              <td> {{list.siteType}}</td>
+
+
+            </tr>
+            </tbody>
+    </table>
+    
+  </div>
+  <!-- <pagination total-items="totalSites"  items-per-page="numPerPage" boundary-links="true" ng-model="currentPage" ng-change="find()"></pagination> -->
+  <pager total-items="totalSites"  items-per-page="numPerPage" num-pages="totalPages" ng-change="find()" boundary-links="true" ng-model="currentPage"></pager>
+
+  <div class="row">
+
+    <div class="col-md-3">
+      
+    </div>
+    <div class="col-md-3">
+     
+    </div>
+    <div class="col-md-3">
+      
+    </div>
+    <div class="col-md-3">
+      
+    </div>
+  </div>
+  <div class="well">
+   
+  </div>
+</section>

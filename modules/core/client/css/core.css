@@ -1,0 +1,106 @@
+.content {
+  margin-top: 50px;
+}
+.undecorated-link:hover {
+  text-decoration: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.header-profile-image {
+  opacity: 0.8;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.open .header-profile-image,
+a:hover .header-profile-image {
+  opacity: 1;
+}
+.user-header-dropdown-toggle {
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+.error-text {
+  display: none;
+}
+.has-error .help-block.error-text {
+  display: block;
+}
+.has-error .help-inline.error-text {
+  display: inline;
+}
+/***********************
+7. atoz
+***********************/
+.az-list {
+  padding: 0 0 0 0;
+  margin: 10px 0 10px -10px;
+  max-width: 800px;
+}
+.az-page h2 {
+  color: #1b50a0;
+}
+#content .az-list li {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #859CBA;
+    float: left;
+    margin: 10px 10px 10px 10px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+  font-size: 110%;
+  padding: 0 0 0 0;
+}
+#content .az-list li.current, .az-list li a:hover {
+    background: white;
+    border: 2px solid #1b50a0;
+    color:#1b50a0;
+    font-weight: bold;
+}
+.az-list li a {
+    color: white;
+    background: #1b50a0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.one-column-bullet li{
+  margin: 0 0 10px 0;
+}
+
+.custom-select{
+  width: 180px;
+  overflow: hidden;
+  border: 1px solid #777580;
+  background: url("../images/Icon_Arrow_Dropdown.png") 95% 50% no-repeat;
+  background-color: #fff;
+  display: inline-block;
+  vertical-align: text-top;
+  margin: 0 5px 0 0;
+}
+.custom-select select{
+  width: 200px;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -o-appearance:none;
+   appearance:none;
+
+  font-size: 1em;
+  height: 36px;
+  padding: 0 0 0 10px;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+.custom-select select::-ms-expand{
+  display:none;
+}
