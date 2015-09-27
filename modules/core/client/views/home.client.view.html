@@ -1,11 +1,11 @@
 <section ng-controller="HomeController" ng-init="find()">
-  <div class="jumbotron text-center">
+  <div class="jumbotron text-center" style="background:url('modules/core/client/img/images.jpg');background-size:cover;">
     <div class="row">
-     <h1>
+     <h1 style="color:white; background-color:orange;">
         Indian Government Portal
       </h1>
       <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-        <img alt="" class="img-responsive text-center" src="" />
+        <!-- <img alt="" width="500" height="500" class="img-responsive text-center" src="modules/core/client/img/images.jpg" /> -->
       </div>
     </div>
     <br>
@@ -48,7 +48,7 @@
     <div class="col-md-12">
         <div class="ui-widget">
                       <form name="search_form" id="searchForm" accept-charset="UTF-8">
-                        <label for="agencySearch"><h3>Type a Government Agency Name </h3></label>
+                        <label for="agencySearch"><h3 style="color:white; background-size:cover;background-color:green;">Type a Government Branch </h3></label>
                         <div class="row search-input-container">
                           <div class="col-md-9 search-input-txt-container">
                             <input type="text" ng-model="siteName" placeholder="site name"  typeahead="item as item.title for item in recommend($viewValue) | filter:{title:$viewValue}" class="typeahead input-md  form-control tt-input" required="">
