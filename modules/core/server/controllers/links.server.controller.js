@@ -43,12 +43,22 @@ exports.list= function(req,res){
    var query=req.query;
    var limit = query.limit;
     var page = query.page;
+    var filter= query.filter;
    var search=query.search;
-    if(search !=null){
-        var re = new RegExp('\\b' + search + '\S*', 'i');
-        console.log(re);
-        var find = Site.find({'site_name':re}).limit(15);
 
+    if(search !=null|| filter!=null){
+      var find;
+       if(search!=null) {
+        
+          var re = new RegExp('\\b' + search + '\S*', 'i');
+        console.log(re);
+        find = Site.find({'site_name':re});
+      }
+      if(filter!=null) 
+        {
+         
+        find = Site.find({'siteType':filter});
+      }
         find.skip(skip).limit(limit).exec(function (err, cities) {
             if (err) {
                 console.log(err);

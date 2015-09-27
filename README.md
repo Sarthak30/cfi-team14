@@ -19,3 +19,7 @@ Having a common framework to build government websites which is easy to use even
 - Auto populated web vocabulary/sitemaps for entire information system across country which would act as entry point to find any information about govt.
 - Uniform design language (Like Material Design is the default design language for Android apps) for smooth UX.
 - Inbuilt API management system which follows NDSAP (http://dst.gov.in/ndsap.pdf) guidelines.
+
+![Alt text](/../master/uploads/image1.png?raw=true "Main Page")
+![Alt text](/../master/uploads/image2.png?raw=true "Main Page")
+![Alt text](/../master/uploads/web.png?raw=true "Main Page")

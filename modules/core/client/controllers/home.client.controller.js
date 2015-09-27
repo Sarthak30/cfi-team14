@@ -42,11 +42,20 @@ angular.module('core').controller('HomeController', ['$scope', '$http','$locatio
                         $scope.maxSize = 20;
 
      // Find a list of site
-    $scope.find = function () {
-
+     
+        $scope.filter=null;
+    $scope.find = function (siteType) {
+      if(siteType){
+        $scope.filter=siteType;
+      }
+      else{
+        $scope.filter=null;
+      }
                         var q ={
                             'limit':$scope.numPerPage,
-                            'page':$scope.currentPage};
+                            'page':$scope.currentPage,
+                            'filter':$scope.filter
+                          };
 
       //$scope.listSites = Site.query();
          var result = Site.get(q,function () {
